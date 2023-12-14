@@ -7,13 +7,13 @@ const router = express.Router();
 router.post("/prueba", async (req: Request, res: Response) => {
   try {
     const data = new Model({
-      q: { required: true, type: String },
+      name: req.body.name, // Tomar el nombre del cuerpo de la solicitud
+      age: req.body.age,
     });
-    console.log("data ", data);
     const dataToSave = await data.save();
-    res.status(200).json(dataToSave);
-  } catch (error) {
-    res.status(400).json({ message: error });
+    res.status(201).json({ message: "Usuario creado exitosamente", data: dataToSave });
+  } catch (error: any) {
+    res.status(400).json({ message: error.message });
   }
 });
 

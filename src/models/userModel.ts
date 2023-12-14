@@ -12,7 +12,7 @@ const dataSchema: Schema<IUser> = new Schema<IUser>({
     type: String,
   },
   age: {
-    required: true,
+    required: false,
     type: Number,
   },
 });
