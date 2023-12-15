@@ -4,7 +4,7 @@ import Model from "../models/userModel";
 const router = express.Router();
 
 // Post Method
-router.post("/prueba", async (req: Request, res: Response) => {
+router.post("/guardar", async (req: Request, res: Response) => {
   try {
     const data = new Model({
       name: req.body.name, // Tomar el nombre del cuerpo de la solicitud
@@ -18,7 +18,7 @@ router.post("/prueba", async (req: Request, res: Response) => {
 });
 
 // Get all Method
-router.get("/getAll", async (req: Request, res: Response) => {
+router.get("/ver-todos", async (req: Request, res: Response) => {
   try {
     const data = await Model.find();
     res.json(data);
@@ -28,7 +28,7 @@ router.get("/getAll", async (req: Request, res: Response) => {
 });
 
 // Get by ID Method
-router.get("/getOne/:id", async (req: Request, res: Response) => {
+router.get("/usuario/:id", async (req: Request, res: Response) => {
   try {
     const data = await Model.findById(req.params.id);
     res.json(data);
@@ -38,7 +38,7 @@ router.get("/getOne/:id", async (req: Request, res: Response) => {
 });
 
 // Update by ID Method
-router.patch("/update/:id", async (req: Request, res: Response) => {
+router.patch("/modificar/:id", async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
     const updatedData = req.body;
@@ -52,7 +52,7 @@ router.patch("/update/:id", async (req: Request, res: Response) => {
 });
 
 // Delete by ID Method
-router.delete("/delete/:id", async (req: Request, res: Response) => {
+router.delete("/eliminar/:id", async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
     const data = await Model.findByIdAndDelete(id);
