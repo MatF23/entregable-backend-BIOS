@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "610f270e-778b-4788-b729-201ec5325e7a",
-		"name": "´Collection Entregable",
+		"_postman_id": "b0920ca6-751c-46ea-b2a2-2f917871cffd",
+		"name": "Entregable Backend BIOS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28761092"
+		"_exporter_id": "28761592"
 	},
 	"item": [
 		{
-			"name": "Obtener usuarios",
+			"name": "Crear usuario",
 			"request": {
 				"method": "GET",
 				"header": []
@@ -15,7 +15,7 @@
 			"response": []
 		},
 		{
-			"name": "Obtener repos",
+			"name": "Obtener todos los usuarios",
 			"request": {
 				"method": "GET",
 				"header": []
@@ -23,7 +23,7 @@
 			"response": []
 		},
 		{
-			"name": "Obtener todas queries",
+			"name": "Buscar usuario por ID",
 			"request": {
 				"method": "GET",
 				"header": []
@@ -31,7 +31,15 @@
 			"response": []
 		},
 		{
-			"name": "Obtener queries por ID",
+			"name": "Modificar usuario por ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuario por ID",
 			"request": {
 				"method": "GET",
 				"header": []
