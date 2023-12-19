@@ -37,6 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/api", queryRouter);
+
 app.use("/api/users", userRoutes);
 
 app.listen(port, () => {

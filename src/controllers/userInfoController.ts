@@ -12,10 +12,13 @@ export async function userInfoController(req: Request, res: Response) {
   try {
     const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
-    console.log("Hello, %s");
+    console.log("Hello ", process.env.GITHUB_USERNAME);
 
     const response = await octokit.rest.search.users({
       q: userName,
+      headers: {
+        authorization: `token ${process.env.GITHUB_TOKEN || ""}`,
+      }
     });
     const data = new Search({
       searchType: "repos",
